@@ -52,11 +52,11 @@ const Footer = () => {
           >
             <a href="/privacy-policy" className="footer-link">
               {t("footer.termsOfService")} {""}
-              {t("footer.privacyPolicy")}
+              {t("footer.privacyPolicy")} {""}
             </a>
 
             <div className="footer-info-item">
-              <span className="info-label">{t("footer.officeHours")}</span>
+              <span className="info-label">{t("footer.officeHours")}</span> {""}
               <span className="info-value">{t("footer.officeHoursValue")}</span>
             </div>
           </motion.div>
