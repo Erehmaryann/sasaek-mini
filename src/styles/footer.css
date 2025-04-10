@@ -48,6 +48,8 @@
 
 .footer-link {
   color: #ffffff;
+  gap: 10px;
+  display: flex;
 }
 
 .footer-link:hover {
@@ -56,6 +58,8 @@
 
 .footer-info-item {
   display: flex;
+  gap: 10px;
+  margin-left: 10px;
 }
 
 .info-label,
