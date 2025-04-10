@@ -174,7 +174,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-// Mobile layout
+/* Mobile layout */
 @media (max-width: 768px) {
   .hero-section {
     height: 500px;
