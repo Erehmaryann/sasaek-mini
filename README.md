@@ -1,54 +1,70 @@
-# React + TypeScript + Vite
+# Sasaek Mini – Perfect Pixel Developer Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my implementation of MUST's Perfect Pixel Developer challenge. The goal was to accurately translate a Figma design into a responsive, pixel-perfect web page using modern front-end technologies.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can view the deployed project here:  
+👉 [https://sasaek-mini.vercel.app](https://sasaek-mini.vercel.app)
 
-## Expanding the ESLint configuration
+## 📁 GitHub Repository
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Source code available at:  
+👉 [https://github.com/Erehmaryann/sasaek-mini](https://github.com/Erehmaryann/sasaek-mini)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+
+## ✨ Key Features
+
+- **Pixel-perfect implementation** based on the provided Figma design.
+- **Responsive layout** that adapts seamlessly across desktop and mobile devices.
+- **Language translation** powered by `i18next` and `i18next-browser-languagedetector`.
+- **Dynamic language switcher** integrated into the navbar.
+- **Accessible and semantic HTML** structure.
+- **Clean component structure** for scalability and maintainability.
+
+
+## 🧠 Why i18next?
+
+The Figma file was originally in Korean and included a language selection dropdown. To reflect real-world UX expectations, I integrated whole-language translation using `i18next`, allowing the interface to switch dynamically between Korean, Japanese, and English.
+
+This feature ensures the UI is inclusive, scalable, and ready for localisation.
+
+
+## 🚀 Tech Stack
+
+- **React** (with Vite)
+- **Framer-motion** (for animation)
+- **Vanilla CSS**
+- **i18next** (for internationalisation)
+- **Vercel** (for deployment)
+- **Git & GitHub** (for version control and collaboration)
+
+
+## 📷 Screenshots
+
+| Desktop View | Mobile View |
+| <img width="1440" alt="Screenshot 2025-04-10 at 4 13 36 AM" src="https://github.com/user-attachments/assets/62d458e1-5e2e-4e8a-b655-2e3e52e6c28e" /> |
+| <img width="375" alt="Screenshot 2025-04-10 at 4 14 16 AM" src="https://github.com/user-attachments/assets/7748f8a7-b9da-4abb-a84d-d801e2a11d4e" /> |
+
+## 🛠️ Getting Started
+
+Clone the repository and run locally:
+
+```bash
+git clone https://github.com/Erehmaryann/sasaek-mini.git
+cd sasaek-mini
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🙌 Final Thoughts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+I approached this task with attention to design precision, user experience, and code quality. I’m excited to bring this same care and creativity to MUST.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Feel free to reach out if you have any questions or would like a walkthrough.
+
+## 📩 Contact
+
+**Maryann Ereh**  
+[LinkedIn](https://www.linkedin.com/in/maryann-ereh)  
+[Email](mailto:your.email@example.com) 
