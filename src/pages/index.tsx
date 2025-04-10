@@ -11,10 +11,10 @@ import Partners from "@/components/partials/partners";
 import activitiesData from "@/data/activities.json";
 import partnersData from "@/data/partners.json";
 
-import "@/styles/home.css";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import "@/styles/home.css";
 
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(1);

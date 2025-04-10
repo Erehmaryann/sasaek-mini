@@ -38,7 +38,7 @@
   flex-direction: column;
   margin-top: 8rem;
   align-items: center;
-  z-index: 2;
+  z-index: 10; /* Increased z-index to ensure content is above slider */
   color: white;
   text-align: center;
   padding: 0 1.5rem;
@@ -72,7 +72,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  z-index: 2;
+  z-index: 10; /* Increased z-index to ensure controls are above slider */
 }
 
 .hero-pagination {
@@ -172,6 +172,36 @@
 
 .hero-button:hover {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* React Slick specific styles */
+.slick-slider {
+  height: 100%;
+}
+
+.slick-list,
+.slick-track {
+  height: 100%;
+}
+
+.slick-slide > div {
+  height: 100%;
+  position: relative;
+}
+
+/* Hide default slick dots */
+.slick-dots {
+  display: none !important;
+}
+
+/* Fix for fade transition */
+.slick-slide {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.slick-active {
+  opacity: 1;
 }
 
 /* Mobile layout */
