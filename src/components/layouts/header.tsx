@@ -88,12 +88,12 @@ function Header() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/activities" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+            <NavLink to="/about" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
               {t("nav.app")}
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+            <NavLink to="/activities" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
               {t("nav.activities")}
             </NavLink>
           </li>
