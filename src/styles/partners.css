@@ -1,0 +1,227 @@
+/* Main section styling */
+.partners-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0 0 3rem 0;
+  overflow: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Container for better positioning */
+.partners-container {
+  display: flex;
+  flex-direction: column;
+  width: 86%;
+  margin: 0 auto;
+}
+
+/* Header styling with title and controls */
+.partners-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.partners-header h2 {
+  font-size: 3.75rem;
+  color: #111111;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+/* Navigation controls styling */
+.partners-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.partner-button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background-color: #111111;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.partner-button:hover {
+  background-color: #333333;
+}
+
+.partner-button:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.partner-button:active {
+  transform: scale(0.95);
+}
+
+.partner-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.partners-controls .next:active {
+  transform: scale(0.95);
+}
+
+/* Slider container for overflow management */
+.partners-slider-container {
+  width: 100%;
+  position: relative;
+}
+
+/* Individual partner item styling */
+.partner-item {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  outline: none;
+}
+
+.partner-item:hover {
+  transform: translateY(-5px);
+}
+
+.partner-item:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Partner logo styling */
+.partner-logo {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.partner-logo img {
+  max-width: 160px;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.partner-item:hover .partner-logo {
+  transform: scale(1.05);
+}
+
+/* Partner text content styling */
+.partner-name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-family: "Pretendard", sans-serif;
+  color: #111111;
+  margin-bottom: 0.5rem;
+}
+
+.partner-description {
+  font-size: 1.125rem;
+  color: #111111;
+  font-weight: 400;
+  font-family: "Pretendard", sans-serif;
+}
+
+/* Pagination indicators */
+.partners-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.slick-dots {
+  position: relative;
+  bottom: 0;
+  display: flex !important;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.slick-dots li {
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+.pagination-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #dddddd;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.slick-active .pagination-dot {
+  background-color: #111111;
+  transform: scale(1.2);
+}
+
+.pagination-dot:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Override slick default styles */
+.slick-slide {
+  padding: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1024px) {
+  .partners-section {
+    padding: 0 0 8rem 0;
+  }
+
+  .partners-container {
+    width: 90%;
+    margin: 0 0 0 auto;
+    flex-direction: row;
+  }
+
+  .partners-header {
+    width: 30%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .partners-header h2 {
+    font-size: 3rem;
+  }
+
+  .partners-slider-container {
+    width: 70%;
+  }
+}
+
+/* Skip animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .partner-item,
+  .partner-logo,
+  .partner-button {
+    transition: none;
+    animation: none;
+  }
+}

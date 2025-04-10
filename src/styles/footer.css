@@ -1,0 +1,250 @@
+.footer {
+  background-color: #222222;
+  color: #a0a0a0;
+  padding: 60px 0;
+  font-family: "Pretendard", sans-serif;
+}
+
+.footer-container {
+  width: 85vw;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Left column */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-logo-section {
+  margin-bottom: 50px;
+}
+
+.footer-logo {
+  height: 40px;
+  opacity: 0.8;
+}
+
+.footer-links {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+.footer-link,
+.info-label,
+.info-value {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.footer-link {
+  color: #ffffff;
+}
+
+.footer-link:hover {
+  color: #7c7c7c;
+}
+
+.footer-info-item {
+  display: flex;
+}
+
+.info-label,
+.info-value {
+  color: #7c7c7c;
+}
+
+.footer-organization {
+  margin-bottom: 5px;
+}
+
+.org-name {
+  font-size: 14px;
+  color: #a0a0a0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+.chairman-title,
+.chairman-name,
+.contact-label {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #7c7c7c;
+}
+
+.contact-value {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: 14px;
+  color: #a0a0a0;
+  align-items: center;
+}
+
+.footer-copyright {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* Right column */
+.footer-right {
+  display: flex;
+  width: 35%;
+  flex-direction: column;
+}
+
+.newsletter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.newsletter-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.newsletter-description {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.newsletter-form-container {
+  margin-top: 10px;
+}
+
+.newsletter-form {
+  width: 100%;
+}
+
+.input-container {
+  position: relative;
+  max-width: 300px;
+}
+
+.newsletter-input {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: #7c7c7c;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  padding: 12px 50px 12px 20px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: #7c7c7c;
+}
+
+.newsletter-input::placeholder {
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.arrow-button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-success {
+  padding: 15px;
+  background-color: #252525;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .footer-container {
+    gap: 40px;
+    width: 95vw;
+    flex-direction: column-reverse;
+  }
+
+  .footer-logo-section {
+    margin-bottom: 20px;
+  }
+
+  .footer-right {
+    width: 100%;
+  }
+
+  .input-container {
+    max-width: 100%;
+  }
+
+  .footer-link,
+  .info-label,
+  .info-value {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 0 20px;
+  }
+
+  .footer-container {
+    padding: 0 20px;
+  }
+
+  .org-name,
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .newsletter-title {
+    font-size: 18px;
+  }
+
+  .newsletter-description {
+    font-size: 13px;
+  }
+}

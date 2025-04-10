@@ -1,0 +1,194 @@
+/* Main section styling */
+.president-section {
+  width: 100%;
+  padding: 7rem 0 5rem 0;
+  background-color: #ffffff;
+}
+
+.president-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* President message area styling */
+.president-message {
+  display: flex;
+  width: 88%;
+  margin: 0 0 0 auto;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.president-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #111111;
+  margin-bottom: 2.5rem;
+}
+
+.message-text p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-family: "Pretendard", sans-serif;
+  font-weight: 400;
+  color: #4c4c4c;
+  line-height: 1.8;
+}
+
+/* President image styling */
+.president-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Signature area styling */
+.signature-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.signature-title {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: #111111;
+}
+
+.signature-image {
+  height: 79px;
+  width: auto;
+}
+
+/* Button styling */
+.more-info-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1.125rem;
+  font-family: "Pretendard", sans-serif;
+  color: #111111;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.more-info-button:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Team members section styling */
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  width: 78%;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: 2rem auto 0;
+}
+
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 270px;
+  flex: 0 1 270px;
+}
+
+.member-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.member-image {
+  width: 100%;
+  height: 100%;
+  background-color: #bbbbbb;
+  object-fit: cover;
+}
+
+.member-name {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: #111111;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .president-message {
+    width: 97%;
+  }
+  .president-section {
+    padding: 3rem 0 0;
+  }
+
+  .team-members {
+    width: 95%;
+    gap: 1.5rem;
+  }
+
+  .member-card {
+    width: 150px;
+    flex: 0 1 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .president-section {
+    padding: 0rem 0;
+  }
+
+  .president-message {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto 3rem;
+  }
+
+  .message-text {
+    order: 2;
+    width: 100%;
+  }
+
+  .president-image-container {
+    order: 1;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .member-card {
+    width: 150px;
+    flex: 0 1 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .president-section {
+    padding: 0rem 0;
+  }
+
+  .team-members {
+    gap: 1rem;
+  }
+
+  .member-card {
+    width: 120px;
+    flex: 0 1 120px;
+  }
+
+  .signature-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

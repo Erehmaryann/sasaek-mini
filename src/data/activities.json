@@ -1,0 +1,20 @@
+{
+  "activities": [
+    {
+      "id": 1,
+      "image": "/assets/concert.webp"
+    },
+    {
+      "id": 2,
+      "image": "/assets/festival.webp"
+    },
+    {
+      "id": 3,
+      "image": "/assets/bazaar.webp"
+    },
+    {
+      "id": 4,
+      "image": "/assets/donation.webp"
+    }
+  ]
+}

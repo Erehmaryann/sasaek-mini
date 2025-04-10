@@ -1,0 +1,249 @@
+/* NavLink styles */
+.nav-link {
+  font-family: "Pretendard", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link.active {
+  color: #8c5947;
+}
+
+.nav-link:hover {
+  color: #8c5947;
+}
+
+/* Desktop navigation menu */
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Navigation links */
+.nav-menu a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: "Pretendard", sans-serif;
+}
+
+/* Language selector button styling */
+.language-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #4c4c4c;
+  border: 1px solid #000000;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  border-radius: 9999px; /* Fully rounded corners */
+  width: 106px;
+  height: 48px;
+  font-size: 0.875rem;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Mobile menu toggle button (hidden by default) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Hamburger menu icon (3-line design) */
+.menu-icon {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+}
+
+/* Hamburger menu top/bottom lines */
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon::before {
+  top: -6px; /* Positions top line */
+}
+
+.menu-icon::after {
+  bottom: -6px; /* Positions bottom line */
+}
+
+/* Transforms hamburger into "X" when menu is open */
+.menu-icon.open {
+  background-color: transparent;
+}
+
+.menu-icon.open::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.menu-icon.open::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+/* base header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.7rem 2.2rem;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+}
+
+/* Add shadow and slightly reduce padding when scrolled */
+.header.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 1.8rem;
+}
+
+/* Logo */
+.logo {
+  width: 180px;
+  height: auto;
+}
+
+.logo-link img {
+  width: 100%;
+  height: auto;
+  transition: all 0.3s ease; /* Smooth logo scaling */
+}
+
+.header.scrolled .logo-link img {
+  width: 160px; /* Slightly smaller logo when scrolled */
+}
+
+/* Language Selector Styles */
+.language-selector {
+  position: relative;
+}
+
+.language-button:hover {
+  background: #5c5c5c;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 140px;
+  z-index: 1000;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.language-option {
+  width: 100%;
+  padding: 12px 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #111111;
+  cursor: pointer;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.language-option:hover {
+  background: #f5f5f5;
+}
+
+/* Mobile responsiveness (tablet and below) */
+@media (max-width: 768px) {
+  /* Adjust header padding for mobile */
+  .header {
+    padding: 1rem;
+  }
+
+  .header.scrolled {
+    padding: 0.75rem 1.2rem;
+  }
+
+  .logo {
+    width: 92px;
+    height: auto;
+  }
+
+  .menu-toggle {
+    display: block; /* Show toggle button on mobile */
+  }
+
+  /* Collapsible mobile menu */
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  /* Expands menu when open */
+  .nav-menu.open {
+    max-height: 400px;
+  }
+
+  /* Stack nav items vertically on mobile */
+  .nav-menu ul {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .language-dropdown {
+    position: static;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .language-option {
+    padding: 10px 1rem;
+  }
+}

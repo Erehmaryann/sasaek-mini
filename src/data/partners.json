@@ -1,0 +1,20 @@
+{
+  "partners": [
+    {
+      "id": 1,
+      "logo": "/assets/brand-1.webp"
+    },
+    {
+      "id": 2,
+      "logo": "/assets/brand-2.webp"
+    },
+    {
+      "id": 3,
+      "logo": "/assets/brand-3.webp"
+    },
+    {
+      "id": 4,
+      "logo": "/assets/brand-4.webp"
+    }
+  ]
+}

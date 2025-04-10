@@ -1,0 +1,149 @@
+{
+  "nav": {
+    "intro": "Introduction",
+    "app": "Small Talk APP",
+    "activities": "Activities"
+  },
+  "hero": {
+    "slide1": {
+      "title": "Precious changes made by hearts that work together",
+      "subtitle": "Moments of joy with sharing and giving",
+      "label": "Special Sharing"
+    },
+    "slide2": {
+      "title": "A special day where warm hearts gather",
+      "subtitle": "Happiness together, time of sharing",
+      "label": "Joy of Sharing"
+    }
+  },
+  "introduction": {
+    "title": "Creating new cultural sharing",
+    "subtitle": "We are",
+    "name": "Sasaek-ui-hyanggi",
+    "description": "Sasaek-ui-hyanggi is a non-profit organization that strives to contribute to society through 'happy cultural sharing' and to create an advanced and healthy social culture as a community of literary people."
+  },
+  "president": {
+    "title": "Message from the Chairman",
+    "greeting": "Hello, I am Oh Deok-gyun, the chairman of Sasaek-ui-hyanggi.",
+    "message1": "Sasaek-ui-hyanggi has been working to create a better society through 'happy cultural sharing'.",
+    "message2": "We will continue to share the value of literature and humanities and grow together as an open community.",
+    "closing": "Thank you for your interest and support.",
+    "signature": "Oh Deok-gyun, Chairman of Sasaek-ui-hyanggi",
+    "button": "See more interviews",
+    "altText": "Chairman Oh Deok-gyun",
+    "signatureAlt": "Chairman Oh Deok-gyun's signature"
+  },
+  "team": {
+    "members": [
+      {
+        "name": "Oh Deok-gyun",
+        "title": "Chairman",
+        "altText": "Photo of Chairman Oh Deok-gyun"
+      },
+      {
+        "name": "Jung Jun-ho",
+        "title": "Director",
+        "altText": "Photo of Director Jung Jun-ho"
+      },
+      {
+        "name": "Kwon Hyuk-jun",
+        "title": "Advisor",
+        "altText": "Photo of Advisor Kwon Hyuk-jun"
+      }
+    ]
+  },
+  "activities": {
+    "title": "What We Do",
+    "subtitle": "Our Footprints",
+    "items": {
+      "1": {
+        "title": "Humanities Concert",
+        "description": "A time of deep contemplation and warm conversation, stories of literature and humanities that touch the heart",
+        "altText": "Humanities concert image"
+      },
+      "2": {
+        "title": "Local Festival",
+        "description": "A day of laughter together while feeling the breath of the region, warmth growing in simple meetings",
+        "altText": "Local festival image"
+      },
+      "3": {
+        "title": "Sharing Bazaar",
+        "description": "Items that convey happiness, and the stories within them",
+        "altText": "Sharing bazaar image"
+      },
+      "4": {
+        "title": "Warm Sponsorship",
+        "description": "Small sharing becomes a big resonance, creating a better tomorrow with Sasaek-ui-hyanggi",
+        "altText": "Warm sponsorship image"
+      }
+    }
+  },
+  "donation": {
+    "title": "If you want to send warm hearts through donation,",
+    "account": "Donation Account Information",
+    "accountNumber": "KB Bank 924501-01-351204 / Sasaek-ui-hyanggi",
+    "regular": "Regular Donation",
+    "oneTime": "One-time Donation"
+  },
+  "app": {
+    "title": "Efforts to create a better world.",
+    "description1": "We are trying to create a community that transcends generations and countries through activities that elevate proper character and personality and share together.",
+    "description2": "We welcome everyone who needs small talk and wisdom of life.",
+    "description3": "We provide small help to those who have difficulties in life. If you have problems that are difficult to solve legally or personally, please ask SoDam Supporters for help.",
+    "release": "Community APP 'Small Talk APP' to be released in June 2025",
+    "download": "App Download"
+  },
+  "partners": {
+    "title": "People Working",
+    "subtitle": "Together",
+    "items": {
+      "1": {
+        "name": "Happy People Inc.",
+        "description": "We provide special days with happy people on happy days.",
+        "altText": "Happy People logo"
+      },
+      "2": {
+        "name": "Good Comment Alliance",
+        "description": "Creating a beautiful society through the establishment of good comments.",
+        "altText": "Good Comment Alliance logo"
+      },
+      "3": {
+        "name": "Artrian",
+        "description": "A permanent art gallery project proposing a new paradigm for the living art market.",
+        "altText": "Artrian logo"
+      },
+      "4": {
+        "name": "Korea WeMen Committee",
+        "description": "Great mentors for children, WeMen is with you.",
+        "altText": "Korea WeMen Committee logo"
+      }
+    }
+  },
+  "footer": {
+    "logoAlt": "Sasaek-ui-hyanggi Logo",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "officeHours": "Customer Center Hours",
+    "officeHoursValue": "08:00~19:00 (Weekends & Holidays Off)",
+    "organisationName": "Sasaek-ui-hyanggi Foundation",
+    "chairmanTitle": "Chairman",
+    "chairmanName": "Oh Deok-gyun",
+    "regNumberLabel": "Registration No.",
+    "regNumber": "355-82-00129",
+    "address": "Address",
+    "addressValue": "3F Irim Building, 28, Teheran-ro 19-gil, Gangnam-gu, Seoul",
+    "telLabel": "Tel",
+    "tel": "02-539-5101",
+    "faxLabel": "Fax",
+    "fax": "070-8668-5091",
+    "emailLabel": "Email",
+    "email": "culppy@culppy.com",
+    "language": "Select Language:",
+    "copyright": "Sasaek-ui-hyanggi. All Rights Reserved",
+    "newsletter": "Subscribe to Newsletter",
+    "newsletterDescription": "Subscribe to receive the latest news, educational content, and event updates from Sasaek-ui-hyanggi.",
+    "emailPlaceholder": "Email Subscription",
+    "subscribeSuccess": "Subscription successful. Thank you!"
+  },
+  "language": "Language"
+}
