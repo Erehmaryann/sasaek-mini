@@ -207,7 +207,7 @@
 /* Mobile layout */
 @media (max-width: 768px) {
   .hero-section {
-    height: 500px;
+    height: 600px;
     border-radius: 16px;
   }
 
@@ -229,7 +229,7 @@
 /* additional breakpoint for very small screens */
 @media (max-width: 480px) {
   .hero-section {
-    height: 450px;
+    height: 550px;
     border-radius: 12px;
   }
 
