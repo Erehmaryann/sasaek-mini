@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import Slider from "react-slick";
 
 import type { HeroProps } from "@/types/home-types";
 
@@ -12,6 +13,7 @@ import "@/styles/hero.css";
 function Hero({ currentSlide, onSlideChange }: HeroProps) {
   const { t } = useTranslation();
   const [isAnimating, setIsAnimating] = useState(false);
+  const sliderRef = useRef<Slider | null>(null);
 
   const slides = [
     {
@@ -33,20 +35,16 @@ function Hero({ currentSlide, onSlideChange }: HeroProps) {
   const handlePrevSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    const newSlide = currentSlide === 1 ? slides.length : currentSlide - 1;
-    onSlideChange(newSlide);
+    sliderRef.current?.slickPrev();
     setTimeout(() => setIsAnimating(false), 500);
   };
 
   const handleNextSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    const newSlide = currentSlide === slides.length ? 1 : currentSlide + 1;
-    onSlideChange(newSlide);
+    sliderRef.current?.slickNext();
     setTimeout(() => setIsAnimating(false), 500);
   };
-
-  const activeSlide = slides.find((slide) => slide.id === currentSlide) || slides[0];
 
   // Calculate the progress percentage for the range input
   useEffect(() => {
@@ -55,6 +53,20 @@ function Hero({ currentSlide, onSlideChange }: HeroProps) {
     document.documentElement.style.setProperty("--range-progress", `${rangeProgress}%`);
   }, [currentSlide, slides.length]);
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    arrows: false,
+    beforeChange: (_: number, newIndex: number) => {
+      onSlideChange(newIndex + 1);
+    },
+    initialSlide: currentSlide - 1,
+  };
+
   return (
     <motion.section
       className="hero-section"
@@ -62,70 +74,50 @@ function Hero({ currentSlide, onSlideChange }: HeroProps) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          className="hero-background"
-          style={{
-            backgroundImage: `url(${activeSlide.image})`,
-          }}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.7 }}
-        ></motion.div>
-      </AnimatePresence>
+      <Slider ref={sliderRef} {...settings}>
+        {slides.map((slide) => (
+          <div key={slide.id}>
+            <div
+              className="hero-background"
+              style={{
+                backgroundImage: `url(${slide.image})`,
+              }}
+            ></div>
+            <div className="hero-content">
+              <motion.div
+                className="hero-label"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="gowun-batang-bold">{slide.label}</span>
+                <motion.div className="hero-label-line" transition={{ duration: 0.5, delay: 0.3 }}></motion.div>
+              </motion.div>
 
-      <motion.div
-        className="hero-content"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`label-${currentSlide}`}
-            className="hero-label"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 20 }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="gowun-batang-bold">{activeSlide.label}</span>
-            <motion.div
-              className="hero-label-line"
-              transition={{ duration: 0.5, delay: 0.3 }}
-            ></motion.div>
-          </motion.div>
-        </AnimatePresence>
+              <motion.h1
+                className="gowun-batang-bold"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+              >
+                {slide.title}
+              </motion.h1>
 
-        <AnimatePresence mode="wait">
-          <motion.h1
-            key={`title-${currentSlide}`}
-            className="gowun-batang-bold"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-          >
-            {activeSlide.title}
-          </motion.h1>
-        </AnimatePresence>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                {slide.subtitle}
+              </motion.p>
+            </div>
+          </div>
+        ))}
+      </Slider>
 
-        <AnimatePresence mode="wait">
-          <motion.p
-            key={`subtitle-${currentSlide}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            {activeSlide.subtitle}
-          </motion.p>
-        </AnimatePresence>
-      </motion.div>
-
-      {/* Rest of the component remains the same */}
       <motion.div
         className="hero-controls"
         initial={{ opacity: 0, y: 20 }}
@@ -140,7 +132,11 @@ function Hero({ currentSlide, onSlideChange }: HeroProps) {
               min="1"
               max={slides.length}
               value={currentSlide}
-              onChange={(e) => onSlideChange(Number.parseInt(e.target.value))}
+              onChange={(e) => {
+                const newSlide = Number.parseInt(e.target.value);
+                onSlideChange(newSlide);
+                sliderRef.current?.slickGoTo(newSlide - 1);
+              }}
               className="pagination-range"
             />
           </div>
@@ -173,7 +169,12 @@ function Hero({ currentSlide, onSlideChange }: HeroProps) {
             transition={{ duration: 0.2 }}
           >
             <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" clipRule="evenodd" d="M8.29289 0.292893C8.68342 -0.0976311 9.31658 -0.0976311 9.70711 0.292893L15.7071 6.29289C16.0976 6.68342 16.0976 7.31658 15.7071 7.70711L9.70711 13.7071C9.31658 14.0976 8.68342 14.0976 8.29289 13.7071C7.90237 13.3166 7.90237 12.6834 8.29289 12.2929L12.5858 8H1C0.447715 8 0 7.55228 0 7C0 6.44772 0.447715 6 1 6H12.5858L8.29289 1.70711C7.90237 1.31658 7.90237 0.683417 8.29289 0.292893Z" fill="white" />
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M8.29289 0.292893C8.68342 -0.0976311 9.31658 -0.0976311 9.70711 0.292893L15.7071 6.29289C16.0976 6.68342 16.0976 7.31658 15.7071 7.70711L9.70711 13.7071C9.31658 14.0976 8.68342 14.0976 8.29289 13.7071C7.90237 13.3166 7.90237 12.6834 8.29289 12.2929L12.5858 8H1C0.447715 8 0 7.55228 0 7C0 6.44772 0.447715 6 1 6H12.5858L8.29289 1.70711C7.90237 1.31658 7.90237 0.683417 8.29289 0.292893Z"
+                fill="white"
+              />
             </svg>
           </motion.button>
         </div>
