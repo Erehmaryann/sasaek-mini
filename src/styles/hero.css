@@ -1,8 +1,8 @@
 /* hero.css */
 .hero-section {
   position: relative;
-  width: 95%;
-  height: 625px;
+  width: 96%;
+  height: 600px;
   overflow: hidden;
   border-radius: 24px;
   margin: 0 auto 0rem auto;
@@ -11,12 +11,13 @@
 .hero-background {
   position: absolute;
   inset: 0;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: bottom;
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
   transition: opacity 1s linear;
+  border-radius: 24px;
 }
 
 .hero-label {
@@ -43,7 +44,7 @@
   text-align: center;
   padding: 0 1.5rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 90vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -68,7 +69,7 @@
 .hero-controls {
   position: absolute;
   bottom: 0.6rem;
-  right: 0rem;
+  right: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -151,6 +152,7 @@
   font-weight: 500;
   font-family: "Pretendard", sans-serif;
 }
+
 .hero-buttons {
   display: flex;
   gap: 0.5rem;
@@ -207,12 +209,18 @@
 /* Mobile layout */
 @media (max-width: 768px) {
   .hero-section {
-    height: 600px;
-    border-radius: 16px;
+    height: 500px;
+  }
+
+  .hero-background {
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 24px;
   }
 
   .hero-content {
-    margin-top: 6rem;
+    justify-content: center;
+    margin-top: 0rem;
     padding: 0 1rem;
   }
 
@@ -221,20 +229,31 @@
   }
 
   .hero-controls {
-    right: 0.6rem;
-    bottom: 0.5rem;
+    right: 1.5rem;
+    bottom: 0.7rem;
+  }
+
+  .hero-button {
+    width: 2.3rem;
+    height: 2.3rem;
   }
 }
 
 /* additional breakpoint for very small screens */
 @media (max-width: 480px) {
   .hero-section {
-    height: 550px;
-    border-radius: 12px;
+    height: 460px;
+  }
+
+  .hero-background {
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 24px;
   }
 
   .hero-content {
-    margin-top: 4rem;
+    margin-top: 0rem;
+    justify-content: center;
   }
 
   .hero-content h1 {
@@ -255,7 +274,7 @@
   }
 
   .hero-button {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
   }
 }
